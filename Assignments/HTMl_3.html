@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        display: inline-block;
+        min-width: 100px;
+        position: relative;
+      }
+      input {
+        display: inline-block;
+        min-width: 200px;
+      }
+      .pt {
+        min-width: auto;
+      }
+      label[required]::before {
+        content: "*";
+        position: absolute;
+        left: -10px;
+        color: red;
+      }
+      .aoi::after {
+        content: "*";
+        position: relative;
+        color: red;
+        right: -5px;
+      }
+      .checkbox {
+        min-width: 200px;
+      }
+      .checkbox ~ input {
+        position: relative;
+        left: -100px;
+      }
+      .checkbox2 {
+        min-width: 0px;
+      }
+      .checkbox2 ~ input {
+        position: relative;
+        left: -85px;
+      }
+      .meals ~ label {
+        min-width: 110px;
+      }
+      .meals ~ input {
+        min-width: auto;
+      }
+      .tc ~ input {
+        min-width: auto;
+      }
+      .tc ~ input::before {
+        content: "*";
+        position: relative;
+        left: -10px;
+        top: -5px;
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <ol>
+        <li>
+          <p>Personal Details :</p>
+          <label required for="firstName">First Name:</label>
+          <input type="text" id="firstName" placeholder="Eg: John" required />
+          <br />
+          <br />
+          <label required for="lastName">Last Name:</label>
+          <input type="text" id="lastName" placeholder="Eg: Doe" required />
+          <br />
+          <br />
+          <label required for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Eg: Johndoe@gmail.com"
+            required
+          />
+          <br />
+          <br />
+          <label required for="phone">Phone:</label>
+          <input type="number" id="phone" placeholder="Eg: 0123456789" />
+        </li>
+        <li>
+          <p>Profile Type :</p>
+          <label for="professional">Professional</label>
+          <input
+            class="pt"
+            name="profileType"
+            type="radio"
+            id="professional"
+            value="professional"
+          />
+          <br />
+          <label for="student">Student</label>
+          <input
+            class="pt"
+            name="profileType"
+            type="radio"
+            id="student"
+            value="student"
+          />
+          <br />
+          <label for="enthusiast">Enthusiast</label>
+          <input
+            class="pt"
+            name="profileType"
+            type="radio"
+            id="enthusiast"
+            value="enthusiast"
+          />
+        </li>
+        <li>
+          <p class="aoi">Areas of interest:</p>
+          <select required name="aoi" id="aoi">
+            <option value="" selected>Select one</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Artificial Intelligence">
+              Artificial Intelligence
+            </option>
+            <option value="Cybersecurity">Cybersecurity</option>
+          </select>
+        </li>
+        <li>
+          <p>Workshops :</p>
+          <label class="checkbox" for="qc">Intro to Quantum Computing</label>
+          <input type="checkbox" id="qc" />
+          <br />
+          <label class="checkbox" for="vr">Virtual Reality on the Web</label>
+          <input type="checkbox" id="vr" />
+          <br />
+          <label class="checkbox" for="cs">Cybersecurity 101</label>
+          <input type="checkbox" id="cs" />
+          <br />
+          <label class="checkbox" for="ai">AI in Medical Imaging</label>
+          <input type="checkbox" id="ai" />
+        </li>
+        <li>
+          <p>Additional Information :</p>
+          <textarea
+            maxlength="300"
+            placeholder="Max 300 characters..."
+            cols="35"
+            rows="5"
+          ></textarea>
+        </li>
+        <li>
+          <p>Preffered Days :</p>
+          <label class="checkbox2" for="day3">Day 1</label>
+          <input type="checkbox" id="day1" />
+          <br />
+          <label class="checkbox2" for="day3">Day 2</label>
+          <input type="checkbox" id="day3" />
+          <br />
+          <label class="checkbox2" for="day3">Day 3</label>
+          <input type="checkbox" id="day3" />
+        </li>
+        <li>
+          <p class="meals">Meal Prefrences :</p>
+          <label for="Vegetarian">Vegetarian</label>
+          <input type="radio" name="meals" id="Vegetarian" value="Vegetarian" />
+          <br />
+          <label for="Non-Vegetarian">Non-Vegetarian</label>
+          <input
+            type="radio"
+            name="meals"
+            id="Non-Vegetarian"
+            value="Non-Vegetarian"
+          />
+          <br />
+          <label for="Vegan">Vegan</label>
+          <input type="radio" name="meals" id="Vegan" value="Vegan" />
+          <br />
+          <label for="No Preference">No Preference</label>
+          <input
+            type="radio"
+            name="meals"
+            id="No Preference"
+            value="No prefrence"
+          />
+          <br />
+        </li>
+        <li>
+          <p class="tc">Terms & Conditions :</p>
+          <input type="checkbox" required />
+          <label for="">I agree to the terms and conditions.</label>
+        </li>
+        <br />
+        <input type="submit" />
+      </ol>
+    </form>
+  </body>
+</html>
